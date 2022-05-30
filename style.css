@@ -35,8 +35,9 @@ body{
 }
 
 .carouselContainer{
-    background: royalblue;
+    background-image: url('images/mountainwpaper.png');
     height: 400px;
+    background-repeat: no-repeat;
 }
 
 .title{
