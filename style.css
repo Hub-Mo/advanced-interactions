@@ -1,7 +1,9 @@
 body{
     padding-bottom: 50px;
 }
-
+.grid-p{
+    color: white;
+}
 .picture{
     padding: 10px;
 }

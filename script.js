@@ -50,13 +50,14 @@ pictures.forEach (pic => {
         if(tiggle == false) {
             tiggle = true;
             pic.style.transform = "scale(1.5)";
-            pic.style.transition = "transform 0.25s ease";
-            console.log(pic.style.transform);
+            pic.style.transition = "transform 0.50s ease";
+            pic.innerHTML = `<p class="grid-p"> text to show when clicked </p>`
         }
         else {
             tiggle = false;
             pic.style.transform = "scale(1)";
-            pic.style.transition = "transform 0.25s ease";
+            pic.style.transition = "transform 0.50s ease";
+            pic.innerHTML = ``
         }
     })
 })
