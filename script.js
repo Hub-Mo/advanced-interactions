@@ -39,7 +39,7 @@ setInterval(function() {
 // parallax 
 window.addEventListener('scroll', () => {
     let offset = window.pageYOffset;
-    carouselImage.style.backgroundPositionY = offset * 0.2 + 'px';
+    carouselImage.style.backgroundPositionY = offset * 0.3 + 'px';
 })
 
 // collage
