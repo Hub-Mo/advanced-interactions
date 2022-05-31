@@ -1,3 +1,4 @@
+
 Array.from(document.querySelectorAll(".letter")).forEach(el => {
    el.innerText = randomLetter();
 });
@@ -44,7 +45,6 @@ window.addEventListener('scroll', () => {
 // collage
 let pictures = document.querySelectorAll('.image');
 var tiggle = false;
-
 pictures.forEach (pic => {
     pic.addEventListener('click', () => {
         if(tiggle == false) {
@@ -61,3 +61,49 @@ pictures.forEach (pic => {
         }
     })
 })
+
+
+// pokemon area
+var inpuut = ""
+var pokis = document.querySelectorAll('.poke');
+
+pokis.forEach(poke => {
+    poke.addEventListener('mouseover', () => {
+        if(poke.innerHTML == "Farfetch'd") {
+            poke.innerHTML = "Farfetchd"
+            input = poke.innerHTML.toLowerCase();
+            catchEmAll()
+        }
+        else {
+        }
+        inpuut = poke.innerHTML.toLowerCase();
+        catchEmAll()
+    })
+})
+// getting the pokemon info
+async function catchEmAll() {
+    console.log(inpuut);
+    let PokeApi = await fetch(`https://pokeapi.co/api/v2/pokemon/${inpuut}`);
+    let Pokemon = await PokeApi.json();
+    console.log(Pokemon);
+    let popUp = document.querySelector('.pokeImage');
+    popUp.innerHTML = `<img src="${Pokemon.sprites.front_default}">`;
+
+}
+
+// chaser circle
+let box = document.querySelector('box');
+let chaser = document.querySelector('chaser');
+
+document.addEventListener('mousemove', (e) => {
+    console.log(e.pageX);
+    console.log(e.pageY);
+    chaser.style.left = `${e.pageX}px`
+    chaser.style.left = `${e.pageY}px`
+
+})
+
+
+
+
+
