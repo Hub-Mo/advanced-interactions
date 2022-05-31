@@ -92,14 +92,16 @@ async function catchEmAll() {
 }
 
 // chaser circle
-let box = document.querySelector('box');
-let chaser = document.querySelector('chaser');
+let box = document.querySelector('.box');
+let chaser = document.querySelector('.chaser');
 
-document.addEventListener('mousemove', (e) => {
-    console.log(e.pageX);
-    console.log(e.pageY);
-    chaser.style.left = `${e.pageX}px`
-    chaser.style.left = `${e.pageY}px`
+box.addEventListener('mousemove', (e) => {
+    console.log(e.offsetX);
+    console.log(e.offsetY);
+    let left = e.offsetX;
+    let top = e.offsetY;
+    chaser.style.left = `${left - 60}px`
+    chaser.style.top = `${top - 60}px`
 
 })
 
