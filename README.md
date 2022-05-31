@@ -7,3 +7,6 @@
 * [x] parallax
 * [x] collage ( can be improved, like inserting real pictures.)
 * [x] fetch pokemon Api and convert to readable json file
+* [x] show pokemin image pop up
+* [x] chaser
+* [x] runner
