@@ -64,7 +64,7 @@ pictures.forEach (pic => {
 
 
 // pokemon area
-var inpuut = ""
+var input = ""
 var pokis = document.querySelectorAll('.poke');
 
 pokis.forEach(poke => {
@@ -72,36 +72,56 @@ pokis.forEach(poke => {
         if(poke.innerHTML == "Farfetch'd") {
             poke.innerHTML = "Farfetchd"
             input = poke.innerHTML.toLowerCase();
-            catchEmAll()
         }
         else {
         }
-        inpuut = poke.innerHTML.toLowerCase();
+        input = poke.innerHTML.toLowerCase();
         catchEmAll()
     })
-})
+
 // getting the pokemon info
 async function catchEmAll() {
-    console.log(inpuut);
-    let PokeApi = await fetch(`https://pokeapi.co/api/v2/pokemon/${inpuut}`);
+    let PokeApi = await fetch(`https://pokeapi.co/api/v2/pokemon/${input}`);
     let Pokemon = await PokeApi.json();
+    console.log(input);
     console.log(Pokemon);
-    let popUp = document.querySelector('.pokeImage');
-    popUp.innerHTML = `<img src="${Pokemon.sprites.front_default}">`;
+    let div = document.createElement('div');
+    let img = document.createElement('img')
+    img.setAttribute('id', 'toolTip');
+    img.src = `${Pokemon.sprites.front_default}`
+    if (input == 'pidgeot') {
+        let pokOne = document.getElementById('pokOne');
+        pokOne.append(img);
+    }
+    else if(input == 'magikarp'){
+        let pokTwo = document.getElementById('pokTwo');
+        pokTwo.append(img);
+    }
+    else if (input == 'slowpoke'){
+        let pokThree = document.getElementById('pokthree');
+        pokThree.append(img);
+    }
+    else if (input == 'farfetchd'){
+        let pokFour = document.getElementById('pokFour');
+        pokFour.append(img);
+    }
+    poke.addEventListener('mouseout', () => {
+        img.setAttribute('hidden', '');
+        img.remove()
+    })
 
 }
+})
 
 // chaser circle
 let box = document.querySelector('.box');
 let chaser = document.querySelector('.chaser');
 
 box.addEventListener('mousemove', (e) => {
-    console.log(e.offsetX);
-    console.log(e.offsetY);
     let left = e.offsetX;
     let top = e.offsetY;
-    chaser.style.left = `${left - 60}px`
-    chaser.style.top = `${top - 60}px`
+    chaser.style.left = `${left - 30}px`
+    chaser.style.top = `${top - 20}px`
 
 })
 
@@ -110,12 +130,21 @@ let runnerBox = document.querySelector('.box2');
 let runner = document.querySelector('.runner');
 
 runner.addEventListener('mouseenter', (i) => {
-    console.log('entered');
     let left = i.offsetX;
     let top = i.offsetY;
     runner.style.left = `${left + Math.floor(Math.random() * 300 )}px`
     runner.style.top = `${top + Math.floor(Math.random() * 300 )}px`
 
+})
+
+// the letters
+
+let letters = document.querySelectorAll('.letter');
+letters.forEach(letter => {
+    letter.addEventListener('mouseover', () => {
+        console.log(letter);
+        letter.style.transform = `rotate(900deg)`;
+    })
 })
 
 

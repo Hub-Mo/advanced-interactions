@@ -23,7 +23,7 @@ body{
     background: red;
     border-radius: 50%;
     position: relative;
-    transition: 2s;
+    transition: 1s;
 }
 
 .runner{
@@ -32,7 +32,7 @@ body{
     background: green;
     border-radius: 50%;
     position: relative;
-    transition: 2s;
+    transition: 1s;
 }
 
 .box{
@@ -88,8 +88,6 @@ body{
 .mode:hover{
     cursor: pointer;
 }
-.pokeImage {
-    width: 200px;
-    height: 200px;
-    background: grey;
+#toolTip {
+position: absolute;
 }
