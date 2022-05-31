@@ -105,6 +105,19 @@ box.addEventListener('mousemove', (e) => {
 
 })
 
+// runner circle
+let runnerBox = document.querySelector('.box2');
+let runner = document.querySelector('.runner');
+
+runner.addEventListener('mouseenter', (i) => {
+    console.log('entered');
+    let left = i.offsetX;
+    let top = i.offsetY;
+    runner.style.left = `${left + Math.floor(Math.random() * 300 )}px`
+    runner.style.top = `${top + Math.floor(Math.random() * 300 )}px`
+
+})
+
 
 
 

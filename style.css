@@ -39,6 +39,10 @@ body{
     border: 1px solid grey;
     height: 350px;
 }
+.box2{
+    border: 1px solid grey;
+    height: 350px;
+}
 
 .carouselContainer{
     background-image: url('images/mountainwpaper.png');
